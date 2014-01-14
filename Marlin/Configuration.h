@@ -80,12 +80,12 @@
 // Make delta curves from many straight lines (linear interpolation).
 // This is a trade-off between visible corners (not enough segments)
 // and processor overload (too many expensive sqrt calls).
-#define DELTA_SEGMENTS_PER_SECOND 140
+#define DELTA_SEGMENTS_PER_SECOND 100
 
 // NOTE NB all values for DELTA_* values MOUST be floating point, so always have a decimal point in them
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 210.0 // mm
+#define DELTA_DIAGONAL_ROD 205.5 // mm
 
 // Horizontal offset from middle of printer to smooth rod center.
 #define DELTA_SMOOTH_ROD_OFFSET 178.7 // mm
@@ -97,7 +97,7 @@
 #define DELTA_CARRIAGE_OFFSET 6.80 // mm
 
 // Effective horizontal distance bridged by diagonal push rods.
-#define DELTA_RADIUS 81 //(DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
+#define DELTA_RADIUS 85 //(DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
 
 #define DELTA_DIAGONAL_ROD_2 sq(DELTA_DIAGONAL_ROD)
 
@@ -309,10 +309,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define DISABLE_Z false
 #define DISABLE_E false // For all extruders
 
-#define INVERT_X_DIR true    // for Mendel set to false, for Orca set to true
-#define INVERT_Y_DIR true    // for Mendel set to true, for Orca set to false
-#define INVERT_Z_DIR true    // for Mendel set to false, for Orca set to true
-#define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
+#define INVERT_X_DIR false    // for Mendel set to false, for Orca set to true
+#define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
+#define INVERT_Z_DIR false    // for Mendel set to false, for Orca set to true
+#define INVERT_E0_DIR true   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E2_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 
@@ -348,7 +348,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // For deltabots this means top and center of the cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 140.4  // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 130.0  // For delta: Distance between nozzle and print surface after homing.
 #define AUTOLEVEL_GRID 20  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
 //// MOVEMENT SETTINGS
@@ -356,7 +356,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 // delta homing speeds must be the same on xyz
 #define HOMING_FEEDRATE {150*60, 150*60, 150*60, 0}  // set the homing speeds (mm/min)
-#define Z_PROBE_OFFSET {-1.0, 14.0, -5.1, 0}  // Distance between hotend nozzle and deployed bed leveling probe. -4.2
+#define Z_PROBE_OFFSET {0.0, 0.0, 0.50, 0.0}  // Distance between hotend nozzle and deployed bed leveling probe. -4.2
 // default settings
 // delta speeds must be the same on xyz
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80.0, 80.0, 80.0, 99.0}  //91.73 or {53.5, 53.5, 53.5, 99} //
@@ -374,8 +374,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // #define EXTRUDER_OFFSET_Y {0.0, 5.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
-#define DEFAULT_XYJERK                0.0    // (mm/sec)
-#define DEFAULT_ZJERK                 0.0    // (mm/sec) Must be same as XY for delta
+#define DEFAULT_XYJERK                10.0    // (mm/sec)
+#define DEFAULT_ZJERK                 10.0    // (mm/sec) Must be same as XY for delta
 #define DEFAULT_EJERK                 0.0    // (mm/sec)
 
 //===========================================================================
@@ -391,7 +391,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define EEPROM_SETTINGS
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
-//#define EEPROM_CHITCHAT
+#define EEPROM_CHITCHAT
 
 // Preheat Constants
 #define PLA_PREHEAT_HOTEND_TEMP 180

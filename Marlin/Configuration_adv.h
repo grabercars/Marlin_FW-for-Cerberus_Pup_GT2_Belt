@@ -74,8 +74,8 @@
 #define EXTRUDER_0_AUTO_FAN_PIN   4 //set the fan pin in pins.h to -1
 #define EXTRUDER_1_AUTO_FAN_PIN   -1
 #define EXTRUDER_2_AUTO_FAN_PIN   -1
-#define EXTRUDER_AUTO_FAN_TEMPERATURE 90
-#define EXTRUDER_AUTO_FAN_SPEED   185  // 255 == full speed
+#define EXTRUDER_AUTO_FAN_TEMPERATURE 130
+#define EXTRUDER_AUTO_FAN_SPEED   220  // 255 == full speed
 
 
 //===========================================================================
@@ -219,7 +219,7 @@
 
 // Feedrates for manual moves along X, Y, Z, E from panel
 #ifdef ULTIPANEL
-#define MANUAL_FEEDRATE {50*60, 50*60, 4*60, 60}  // set the speeds for manual moves (mm/min)
+#define MANUAL_FEEDRATE {150*60, 150*60, 15*60, 60}  // set the speeds for manual moves (mm/min)
 #endif
 
 // minimum time in microseconds that a movement needs to take if the buffer is emptied.

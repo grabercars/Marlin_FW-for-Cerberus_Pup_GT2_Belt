@@ -36,9 +36,9 @@
 	#ifdef CUSTOM_MENDEL_NAME
 		#define MACHINE_NAME CUSTOM_MENDEL_NAME
 	#else
-		#define MACHINE_NAME "Mendel"
+		#define MACHINE_NAME "Cerberus Pup Deltabot"
 	#endif
-	#define FIRMWARE_URL "http://www.mendel-parts.com"
+	#define FIRMWARE_URL "https://github.com/grabercars/Cerberus_Pup_170_GT2_belt_drive"
 #endif
 
 #define STRINGIFY_(n) #n
